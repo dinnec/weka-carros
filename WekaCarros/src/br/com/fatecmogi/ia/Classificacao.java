@@ -8,28 +8,25 @@ package br.com.fatecmogi.ia;
 import weka.attributeSelection.AttributeSelection;
 import weka.attributeSelection.InfoGainAttributeEval;
 import weka.attributeSelection.Ranker;
-import weka.classifiers.Classifier;
-import weka.classifiers.functions.GaussianProcesses;
 import weka.classifiers.functions.LinearRegression;
-import weka.classifiers.trees.J48;
 import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.SelectedTag;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 
-import javax.sound.sampled.Line;
-
 public class Classificacao {
     private DataSource source;
     private Instances data;
+    private Instances filteredData;
     private Remove filter;
-    private AttributeSelection selAtributo;
+    private AttributeSelection attributeSelection;
     private InfoGainAttributeEval avaliador;
     private Ranker busca;
     private LinearRegression trainedDataSet;
-    private String[] options = new String[]{"-R", "1"};
+    private String[] options = new String[]{"-R", "16"};
 
 
     public Classificacao() {
@@ -42,17 +39,18 @@ public class Classificacao {
             filter.setOptions(options);
             filter.setInputFormat(data);
             data = Filter.useFilter(data, filter);
-            
-/*          selAtributo = new AttributeSelection();
-            avaliador = new InfoGainAttributeEval();
-            busca = new Ranker();
-            selAtributo.setEvaluator(avaliador);
-            selAtributo.setSearch(busca);
-            selAtributo.SelectAttributes(data);*/
+
+//            selAtributo = new AttributeSelection();
+//            avaliador = new ();
+//            busca = new Ranker();
+//            selAtributo.setEvaluator(avaliador);
+//            selAtributo.setSearch(busca);
+//            selAtributo.SelectAttributes(data);
 
 //            String[] options2 = new String[] {""};
+            String[] opcoes = new String[] {"-S", "0"};
             trainedDataSet = new LinearRegression();
-            trainedDataSet.setOptions(options);
+            trainedDataSet.setOptions(opcoes);
             trainedDataSet.buildClassifier(data);
         }
         catch(Exception e)

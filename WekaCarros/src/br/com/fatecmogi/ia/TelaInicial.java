@@ -254,12 +254,11 @@ public class TelaInicial extends javax.swing.JFrame {
     }
 
     private void buttonCalcularValorActionPerformed(java.awt.event.ActionEvent evt) {
-        double[] vals = new double[15];
+        double[] vals = new double[16];
         String retorno = "";
 
         vals[0] = comboBoxMarca.getSelectedIndex();
         vals[1] = comboBoxModelo.getSelectedIndex();
-        System.out.println(comboBoxModelo.getSelectedIndex());
         vals[2] = comboBoxCarroceria.getSelectedIndex();
         vals[3] = comboBoxCor.getSelectedIndex();
         vals[4] = comboBoxCambio.getSelectedIndex();
@@ -274,6 +273,7 @@ public class TelaInicial extends javax.swing.JFrame {
         vals[12] = comboBoxMotor.getSelectedIndex();
         vals[13] = comboBoxAno.getSelectedIndex();
         vals[14] = comboBoxPais.getSelectedIndex();
+        vals[15] = 0;
 
 
 

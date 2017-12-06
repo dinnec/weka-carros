@@ -1,49 +1,53 @@
 @RELATION carros
 
-@ATTRIBUTE marca {Audi, Bentley,  BMW, Chevrolet, Fiat, Ford, Honda, JAC, Nissan, Peugeot, Porsche, Renault, Toyota, Volkswagen}
+@ATTRIBUTE marca {Audi, Bentley, BMW, Chevrolet, Fiat, Ford, Honda, JAC, Nissan, Peugeot, Porsche, Renault, Toyota, Volkswagen}
 @ATTRIBUTE modelo {"308 CC", "911 GT3 RS", "A1", "A3", "A5 Turbo", "Argo", "Camaro SS", "Continental GT", "Corolla", "Cruse", "Doblo", "Duster", "EcoSport", "Fiorino", "Fit DX", "Kombi", "Logan", "Maverick GT", "S10 100 Anos", "Sandero", "Saveiro", "Sentra SL", "Spin", "T40", "Toro", "Voyage", "Z4 Roadster"}
 @ATTRIBUTE carroceria {Conversível,Cupê,Hatch,Monovolume,Picape,Sedan,Sportback,Utilitário,Van}
 @ATTRIBUTE cor {Azul,Branco,Cinza,Laranja,Marrom,Prata,Preto,Verde,Vermelho}
 @ATTRIBUTE cambio {Automático, Manual}
-@ATTRIBUTE portas {2, 3, 4}
+@ATTRIBUTE portas INTEGER [2, 5]
 @ATTRIBUTE lugares INTEGER [1, 9]
 @ATTRIBUTE combustivel {Diesel, Flex, Gasolina}
 @ATTRIBUTE litrosTanque INTEGER [40, 90]
 @ATTRIBUTE arCondicionado {true, false}
 @ATTRIBUTE airbags INTEGER [0,7]
 @ATTRIBUTE volumePortaMalas INTEGER [60, 1061]
-@ATTRIBUTE motor {"1.0", "1.4", "1.5", "1.6", "1.7", "1.8", "2.0", "2.8", "4.0", "5.0", "6.2"}
-@ATTRIBUTE ano {1975, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018}
+%@ATTRIBUTE motor {"1.0", "1.4", "1.5", "1.6", "1.7", "1.8", "2.0", "2.8", "4.0", "5.0", "6.2"}
+@ATTRIBUTE motor NUMERIC [1.0, 10.0}
+@ATTRIBUTE ano INTEGER [1900, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2020]
+%@ATTRIBUTE ano {1975, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018}
 @ATTRIBUTE pais {Alemanha, China, EUA, França, Inglaterra, Itália, Japão}
+@ATTRIBUTE whatever {0}
 @ATTRIBUTE preco INTEGER [22000, 1816666]
 
+
 @DATA
-Audi,"A3",Sportback,Azul,Automático,4,5,Gasolina,50,true,7,380,1.4,2018,Alemanha,127990.00
-Audi,"A1",Hatch,Vermelho,Automático,4,5,Flex,45,true,6,270,1.4,2018,Alemanha,113990.00
-Audi,"A5 Turbo",Sedan,Branco,Automático,4,5,Flex,54,true,6,480,2.0,2018,Alemanha,189990.00
-Bentley,"Continental GT",Sedan,Branco,Automático,2,5,Flex,50,true,2,500,4.0,2014,Inglaterra,1149000.00
-BMW,"Z4 Roadster",Conversível,Cinza,Automático,2,2,Gasolina,60,true,6,180,2.0,2016,Alemanha,215613.00
-Chevrolet,"Camaro SS",Conversível,Prata,Automático,2,5,Gasolina,72,true,6,208,6.2,2017,EUA,343000.00
-Chevrolet,"Camaro SS",Cupê,Azul,Automático,2,4,Gasolina,72,true,4,208,6.2,2017,EUA,305000.00
-Chevrolet,"S10 100 Anos",Picape,Azul,Automático,4,5,Diesel,76,true,4,1061,2.8,2018,EUA,187500.00
-Chevrolet,"Cruse",Hatch,Cinza,Automático,4,5,Flex,52,true,4,440,1.4,2018,EUA,92990.00
-Chevrolet,"Spin",Monovolume,Prata,Manual,4,5,Flex,53,true,2,710,1.8,2015,EUA,59990.00
-Fiat,"Toro",Picape,Cinza,Automático,4,5,Flex,60,true,2,980,1.7,2016,Itália,87490.00
-Fiat,"Argo",Utilitário,Vermelho,Automático,4,5,Flex,48,true,2,300,1.7,2017,Itália,70600.00
-Fiat,"Doblo",Van,Verde,Manual,4,5,Flex,60,true,2,750,1.7,2018,Itália,82000.00
-Fiat,"Fiorino",Van,Vermelho,Manual,2,2,Flex,58,true,2,1000,1.4,2018,Itália,55230.00
-Ford,"EcoSport",Utilitário,Azul,Manual,4,5,Flex,52,true,7,362,1.5,2018,EUA,73990.00
-Ford,"Maverick GT",Cupê,Laranja,Manual,2,5,Gasolina,42,false,2,490,5.0,1975,EUA,22000.00
-Honda,"Fit DX",Hatch,Branco,Manual,3,5,Flex,46,true,2,363,1.5,2017,Japão,58700.00
-JAC,"T40",Hatch,Branco,Automático,4,5,Flex,42,true,2,450,1.5,2018,China,56990.00
-Nissan,"Sentra SL",Sedan,Cinza,Automático,4,5,Flex,52,true,2,503,2.0,2018,Japão,82900.00
-Peugeot,"308 CC",Conversível,Cinza,Automático,2,4,Gasolina,60,true,2,226,1.6,2015,França,110000.00
-Porsche,"911 GT3 RS",Cupê,Vermelho,Automático,2,2,Gasolina,64,true,6,125,4.0,2016,Alemanha,1816666.00
-Porsche,"911 GT3 RS",Cupê,Preto,Automático,2,2,Gasolina,64,true,6,125,4.0,2016,Alemanha,1816666.00
-Renault,"Duster",Utilitário,Marrom,Manual,4,5,Flex,50,true,2,475,1.6,2015,França,67990.00
-Renault,"Sandero",Hatch,Prata,Manual,4,5,Flex,50,true,2,320,1.0,2016,França,42900.00
-Renault,"Logan",Sedan,Vermelho,Manual,4,5,Flex,50,true,2,510,1.0,2018,França,44700.00
-Toyota,"Corolla",Sedan,Preto,Automático,4,5,Flex,60,true,7,470,1.8,2018,Japão,114990.00
-Volkswagen,"Voyage",Sedan,Preto,Manual,4,5,Flex,55,false,2,480,1.0,2017,Alemanha,42628.00
-Volkswagen,"Saveiro",Van,Vermelho,Manual,2,2,Flex,55,true,2,923,1.6,2016,Alemanha,46530.00
-Volkswagen,"Kombi",Van,Branco,Manual,3,9,Flex,45,false,0,60,1.4,2014,Alemanha,28500.00
+Audi,"A3",Sportback,Azul,Automático,4,5,Gasolina,50,true,7,380,1.4,2018,Alemanha,0,127990.00
+Audi,"A1",Hatch,Vermelho,Automático,4,5,Flex,45,true,6,270,1.4,2018,Alemanha,0,113990.00
+Audi,"A5 Turbo",Sedan,Branco,Automático,4,5,Flex,54,true,6,480,2.0,2018,Alemanha,0,189990.00
+Bentley,"Continental GT",Sedan,Branco,Automático,2,5,Flex,50,true,2,500,4.0,2014,Inglaterra,0,1149000.00
+BMW,"Z4 Roadster",Conversível,Cinza,Automático,2,2,Gasolina,60,true,6,180,2.0,2016,Alemanha,0,215613.00
+Chevrolet,"Camaro SS",Conversível,Prata,Automático,2,5,Gasolina,72,true,6,208,6.2,2017,EUA,0,343000.00
+Chevrolet,"Camaro SS",Cupê,Azul,Automático,2,4,Gasolina,72,true,4,208,6.2,2017,EUA,0,305000.00
+Chevrolet,"S10 100 Anos",Picape,Azul,Automático,4,5,Diesel,76,true,4,1061,2.8,2018,EUA,0,187500.00
+Chevrolet,"Cruse",Hatch,Cinza,Automático,4,5,Flex,52,true,4,440,1.4,2018,EUA,0,92990.00
+Chevrolet,"Spin",Monovolume,Prata,Manual,4,5,Flex,53,true,2,710,1.8,2015,EUA,0,59990.00
+Fiat,"Toro",Picape,Cinza,Automático,4,5,Flex,60,true,2,980,1.7,2016,Itália,0,87490.00
+Fiat,"Argo",Utilitário,Vermelho,Automático,4,5,Flex,48,true,2,300,1.7,2017,Itália,0,70600.00
+Fiat,"Doblo",Van,Verde,Manual,4,5,Flex,60,true,2,750,1.7,2018,Itália,0,82000.00
+Fiat,"Fiorino",Van,Vermelho,Manual,2,2,Flex,58,true,2,1000,1.4,2018,Itália,0,55230.00
+Ford,"EcoSport",Utilitário,Azul,Manual,4,5,Flex,52,true,7,362,1.5,2018,EUA,0,73990.00
+Ford,"Maverick GT",Cupê,Laranja,Manual,2,5,Gasolina,42,false,2,490,5.0,1975,EUA,0,22000.00
+Honda,"Fit DX",Hatch,Branco,Manual,3,5,Flex,46,true,2,363,1.5,2017,Japão,0,58700.00
+JAC,"T40",Hatch,Branco,Automático,4,5,Flex,42,true,2,450,1.5,2018,China,0,56990.00
+Nissan,"Sentra SL",Sedan,Cinza,Automático,4,5,Flex,52,true,2,503,2.0,2018,Japão,0,82900.00
+Peugeot,"308 CC",Conversível,Cinza,Automático,2,4,Gasolina,60,true,2,226,1.6,2015,França,0,110000.00
+Porsche,"911 GT3 RS",Cupê,Vermelho,Automático,2,2,Gasolina,64,true,6,125,4.0,2016,Alemanha,0,1816666.00
+Porsche,"911 GT3 RS",Cupê,Preto,Automático,2,2,Gasolina,64,true,6,125,4.0,2016,Alemanha,0,1816666.00
+Renault,"Duster",Utilitário,Marrom,Manual,4,5,Flex,50,true,2,475,1.6,2015,França,0,67990.00
+Renault,"Sandero",Hatch,Prata,Manual,4,5,Flex,50,true,2,320,1.0,2016,França,0,42900.00
+Renault,"Logan",Sedan,Vermelho,Manual,4,5,Flex,50,true,2,510,1.0,2018,França,0,44700.00
+Toyota,"Corolla",Sedan,Preto,Automático,4,5,Flex,60,true,7,470,1.8,2018,Japão,0,114990.00
+Volkswagen,"Voyage",Sedan,Preto,Manual,4,5,Flex,55,false,2,480,1.0,2017,Alemanha,0,42628.00
+Volkswagen,"Saveiro",Van,Vermelho,Manual,2,2,Flex,55,true,2,923,1.6,2016,Alemanha,0,46530.00
+Volkswagen,"Kombi",Van,Branco,Manual,3,9,Flex,45,false,0,60,1.4,2014,Alemanha,0,28500.00
